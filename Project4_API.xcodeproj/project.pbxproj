@@ -13,6 +13,7 @@
 		917B4319275E6BC0005D21A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 917B4317275E6BC0005D21A4 /* Main.storyboard */; };
 		917B431B275E6BC1005D21A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917B431A275E6BC1005D21A4 /* Assets.xcassets */; };
 		917B431E275E6BC1005D21A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 917B431C275E6BC1005D21A4 /* LaunchScreen.storyboard */; };
+		917B4328275E7E40005D21A4 /* imagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B4327275E7E40005D21A4 /* imagesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		917B431A275E6BC1005D21A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		917B431D275E6BC1005D21A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		917B431F275E6BC1005D21A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		917B4327275E7E40005D21A4 /* imagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				917B4311275E6BC0005D21A4 /* AppDelegate.swift */,
 				917B4313275E6BC0005D21A4 /* SceneDelegate.swift */,
 				917B4315275E6BC0005D21A4 /* ViewController.swift */,
+				917B4327275E7E40005D21A4 /* imagesView.swift */,
 				917B4317275E6BC0005D21A4 /* Main.storyboard */,
 				917B431A275E6BC1005D21A4 /* Assets.xcassets */,
 				917B431C275E6BC1005D21A4 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				917B4328275E7E40005D21A4 /* imagesView.swift in Sources */,
 				917B4316275E6BC0005D21A4 /* ViewController.swift in Sources */,
 				917B4312275E6BC0005D21A4 /* AppDelegate.swift in Sources */,
 				917B4314275E6BC0005D21A4 /* SceneDelegate.swift in Sources */,
