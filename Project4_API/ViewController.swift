@@ -6,6 +6,9 @@
 //
 
 import UIKit
+
+
+
 class APIResponse : Codable{
   let total : Int
   let total_pages : Int
@@ -14,10 +17,13 @@ class APIResponse : Codable{
   struct Result : Codable {
    let id : String
     let urls : URLS
+      let  description : String?
   }
 struct URLS : Codable{
   let small : String
 }
+
+
 class ViewController: UIViewController ,UICollectionViewDataSource , UICollectionViewDelegate {
     
     var results : [Result] = []
@@ -30,19 +36,29 @@ class ViewController: UIViewController ,UICollectionViewDataSource , UICollectio
     
     
     @IBAction func btnSearch(_ sender: Any) {
+        
+        if let text = textSearch.text{
+            
+            results = []
+            collectionView.reloadData()
+            getData(query: text)
+        }
     }
     
    
-    
-        let urlString = "https://api.unsplash.com/search/photos?page=1&query=office&client_id=sa4wSpj9DdDWpknfCmkUNw_xxVTvj406EP0r1xFDmqE"
+     
         override func viewDidLoad() {
             super.viewDidLoad()
             collectionView.delegate = self
             collectionView.dataSource = self
-            getData()
+//            getData()
         }
     
-        func getData(){
+    func getData(query : String){
+            
+            let urlString = "https://api.unsplash.com/search/photos?page=1&query=\(query)&client_id=sa4wSpj9DdDWpknfCmkUNw_xxVTvj406EP0r1xFDmqE"
+            
+            
             guard let url = URL(string: urlString) else {
                 return
             }
