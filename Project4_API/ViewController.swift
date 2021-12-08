@@ -7,28 +7,33 @@
 
 import UIKit
 
-
+//--------------------------------
 
 class APIResponse : Codable{
   let total : Int
   let total_pages : Int
   let results : [Result]
 }
+
   struct Result : Codable {
    let id : String
     let urls : URLS
       let  description : String?
   }
+
 struct URLS : Codable{
   let small : String
 }
-
+//---------------------------------
 
 class ViewController: UIViewController ,UICollectionViewDataSource , UICollectionViewDelegate {
+    
+    
     
     var results : [Result] = []
     var images = [UIImage]()
     
+//  --------------------------------------------
     
     @IBOutlet weak var textSearch: UITextField!
     
@@ -51,8 +56,9 @@ class ViewController: UIViewController ,UICollectionViewDataSource , UICollectio
             super.viewDidLoad()
             collectionView.delegate = self
             collectionView.dataSource = self
-//            getData()
+
         }
+//    ----------------------------------------------
     
     func getData(query : String){
             
@@ -62,6 +68,11 @@ class ViewController: UIViewController ,UICollectionViewDataSource , UICollectio
             guard let url = URL(string: urlString) else {
                 return
             }
+        
+        
+//         session
+        
+        
             let task = URLSession.shared.dataTask(with: url) { [weak self] data ,_, error in
                 guard let data = data , error == nil else {
                     return
@@ -85,6 +96,9 @@ class ViewController: UIViewController ,UICollectionViewDataSource , UICollectio
             task.resume()
         }
     
+    
+//    --------------------------------------------
+    
         func getImage (url :URL) {
             let task = URLSession.shared.dataTask(with: url) { data, _, error in
                 guard let data = data , error == nil else { return }
@@ -98,16 +112,20 @@ class ViewController: UIViewController ,UICollectionViewDataSource , UICollectio
             task.resume()
         }
     
+    
+//    ---------------------------------------------------
+    
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return images.count
         }
     
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let imageURLString = results[indexPath.row].urls.small
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! imagesView
-    
-            cell.imgView.image = images[indexPath.row]
-    
+
+            //if let imageURLString = results[indexPath.row].urls.small {
+                cell.imgView.image = images[indexPath.row]
+            //}
+            
             return cell
         }
     
